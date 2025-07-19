@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Technoloies - Web Design & Software Services</title>
+    <!-- Link to Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+   
+    <style>
+         
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            
+   <a href="#" class="text-2xl font-bold text-gray-800"><img src="./images/aventura.jpg" alt="Logo" class=" h-21 w-auto" /></a>
+
+
+           
+<!-- Header Navigation including Search -->
+<!-- Navigation Bar -->
+ 
+<nav class="hidden  md:flex items-center space-x-6">
+     <a href="#" class="  bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Home</a>
+    <!-- Services Dropdown -->
+    <div class="group relative">
+        <button class="text-gray-600 hover:text-blue-600 focus:outline-none">Services</button>
+        <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-48">
+            <a href="#web-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Website Design</a>
+            <a href="#hosting" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Hosting Solutions</a>
+            <a href="#mobile-apps" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mobile App Development</a>
+            <a href="#software" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Software Solutions</a>
+            <a href="#marketing" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Digital Marketing</a>
+            <a href="#ai-courses" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">AI Courses</a>
+        </div>
+    </div>
+
+    <!-- Portfolio Dropdown -->
+    <div class="group relative">
+        <button class="text-gray-600 hover:text-blue-600 focus:outline-none">Portfolio</button>
+        <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-56">
+            <a href="#website-portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Website Portfolio</a>
+            <a href="#logo-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logo Design Portfolio</a>
+            <a href="#company-profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Company Profile Portfolio</a>
+            <a href="#business-card" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Business Card Portfolio</a>
+        </div>
+    </div>
+
+    <!-- Other Links -->
+    <a href="#clients" class="text-gray-600 hover:text-blue-600">Clients</a>
+    <a href="#about" class="text-gray-600 hover:text-blue-600">About Us</a>
+    <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+
+    <!-- Custom Search Form -->
+   <!-- <form action="/search" method="GET" class="relative ml-4">
+        <input type="text" name="q" placeholder="Search..." 
+               class="pl-4 pr-10 py-1.5 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-white text-gray-800 w-48">
+        <button type="submit" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-600 hover:text-blue-800">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" 
+                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                 <path stroke-linecap="round" stroke-linejoin="round" 
+                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+        </button>
+    </form>
+    -->
+</nav>
+            <button class="md:hidden text-gray-600 hover:text-gray-900">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+   
+
+<!-- Hero Section with Carousel -->
+<section class="bg-gradient-to-r from-blue-700 to-black text-white py-20 relative overflow-hidden"
+         x-data="{
+             activeSlide: 0,
+             slides: [
+                 'Crafting Digital Excellence', 
+                 'Empowering Student Projects', 
+                 'Web Design & AI Integration'
+             ],
+             direction: 'right',
+             interval: null
+         }"
+         x-init="interval = setInterval(() => { direction = 'right'; activeSlide = (activeSlide + 1) % slides.length }, 4000)"
+         @mouseenter.window="clearInterval(interval)"
+         @mouseleave.window="interval = setInterval(() => { direction = 'right'; activeSlide = (activeSlide + 1) % slides.length }, 4000)">
+    
+    <div class="container mx-auto px-4 text-center relative h-40 md:h-46">
+        <!-- Slides Container -->
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slide, index) in slides" :key="index">
+                <h1 class="absolute inset-0 text-4xl md:text-5xl font-extrabold mb-4 transform transition-all duration-700 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]"
+                    x-show="activeSlide === index"
+                    x-transition:enter=""
+                    x-bind:class="{
+                        '-translate-x-full opacity-0': direction === 'left' && activeSlide !== index,
+                        'translate-x-full opacity-0': direction === 'right' && activeSlide !== index
+                    }">
+                    <span x-text="slide" class="block"></span>
+                </h1>
+            </template>
+        </div>
+
+        <!-- Static Content -->
+        <p class="text-lg md:text-xl mb-8">Innovative web design, robust software solutions, and empowering student projects.</p>
+        <a href="#portfolio" 
+           class="bg-white text-blue-700 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300"
+           aria-label="View our portfolio projects">
+            View Our Work
+        </a>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
+        <template x-for="(slide, index) in slides" :key="index">
+            <button @click="direction = activeSlide > index ? 'left' : 'right'; activeSlide = index"
+                    class="w-3 h-3 rounded-full transition-colors"
+                    :class="activeSlide === index ? 'bg-white' : 'bg-white/50'"
+                    :aria-label="'Go to slide ' + (index + 1)">
+            </button>
+        </template>
+    </div>
+</section>
+
+
+    <!-- Services Overview Section -->
+    <section id="services" class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Core Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Service 1: Web Design -->
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <div class="text-blue-600 text-5xl mb-4">🌐</div>
+                <h3 class="text-xl font-semibold mb-2">Web Design</h3>
+                <p class="text-gray-600">Creating stunning, responsive, and user-friendly websites tailored to your brand.</p>
+            </div>
+            <!-- Service 2: Software Services -->
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <div class="text-green-600 text-5xl mb-4">💻</div>
+                <h3 class="text-xl font-semibold mb-2">Software Services</h3>
+                <p class="text-gray-600">Developing custom software solutions to streamline your business operations.</p>
+            </div>
+            <!-- Service 3: Student Projects -->
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <div class="text-yellow-600 text-5xl mb-4">🎓</div>
+                <h3 class="text-xl font-semibold mb-2">Student Projects</h3>
+                <p class="text-gray-600">Guiding and assisting students in bringing their innovative project ideas to life.</p>
+            </div>
+
+
+  
+
+    <!-- Service 4: Branding Solutions -->
+    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+      <div class="text-pink-500 text-5xl mb-4">🎨</div>
+      <h3 class="text-xl font-semibold mb-2">Branding Solutions</h3>
+      <p class="text-gray-600">Crafting memorable brand identities, logos, and visual systems that speak volumes.</p>
+    </div>
+
+    <!-- Service 5: Content Writing -->
+    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+      <div class="text-purple-500 text-5xl mb-4">📝</div>
+      <h3 class="text-xl font-semibold mb-2">Content Writing</h3>
+      <p class="text-gray-600">Professional content for websites, blogs, and marketing—tailored to your voice and audience.</p>
+    </div>
+
+    <!-- Service 6: Company Incorporation -->
+    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+      <div class="text-red-500 text-5xl mb-4">📄</div>
+      <h3 class="text-xl font-semibold mb-2">Company Incorporation</h3>
+      <p class="text-gray-600">Helping startups register, structure, and launch smoothly with complete compliance support.</p>
+    </div>
+  </div>
+    </section>
+     
+
+    <!-- Featured Projects/Portfolio Section -->
+    <section id="portfolio" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Portfolio Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card Example 1 (Web Design) -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://reallygooddesigns.com/wp-content/uploads/2022/05/portfolio-website-design-examples.png" alt="Web Design Project Image" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">E-commerce Website Redesign</h3>
+                        <p class="text-gray-600 text-sm mb-3">#WebDesign #Ecommerce #Responsive</p>
+                        <a href="#" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">View Case Study</a>
+                    </div>
+                </div>
+                <!-- Project Card Example 2 (Software Service) -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2023/07/19-best-web-design-portfolio-examples-to-inspire-yours-currentyear--3.jpeg" alt="Software Project Image" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Custom CRM Development</h3>
+                        <p class="text-gray-600 text-sm mb-3">#SoftwareDevelopment #CRM #Efficiency</p>
+                        <a href="#" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">View Details</a>
+                    </div>
+                </div>
+                <!-- Project Card Example 3 (Student Project) -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://designs.raleighswebsitedesign.com/wp-content/uploads/2023/02/25122315/Blog-Social_Image.jpg" alt="Student Project Image" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">AI-Powered Chatbot (Student)</h3>
+                        <p class="text-gray-600 text-sm mb-3">#StudentProject #AI #Chatbot</p>
+                        <a href="#" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">Explore Project</a>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-700 transition duration-300">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+
+  
+
+
+    <!-- Clients Section -->
+<section id="clients" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Who We've Worked With</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+        <!-- Client Logo 1 -->
+        <div class="flex justify-center items-center">
+            <img src="https://www.dcac.com/wp-content/uploads/2018/09/Microsoft-logo_rgb_gray.jpg-1024x459.png" alt="Microsoft Logo" class="h-15">
+        </div>
+        <!-- Client Logo 2 -->
+        <div class="flex justify-center items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo" class="h-15">
+        </div>
+        <!-- Client Logo 3 -->
+        <div class="flex justify-center items-center">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.AV1E85YrAtJqrKbA4GmkQwHaEo?pid=ImgDet&w=184&h=115&c=7&dpr=1.3&o=7&rm=3" alt="Adobe Logo" class="h-15">
+        </div>
+        <!-- Client Logo 4 -->
+        <div class="flex justify-center items-center">
+            <img src="https://th.bing.com/th/id/OIP.yi44HYLqnm7_NYHb_gTYSQHaEc?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Google Logo" class="h-15">
+        </div>
+    </div>
+    <div class="text-center mt-12 max-w-3xl mx-auto">
+        <p class="text-lg text-gray-700">Over the years, we've partnered with industry leaders, startups, and educational institutions to craft tailored digital experiences. Whether it's a global tech firm or a local non-profit, our commitment to innovation and excellence remains the same.</p>
+        <a href="#contact" class="inline-block mt-6 bg-blue-600 text-white px-6 py-3 rounded-full text-md font-semibold hover:bg-blue-700 transition duration-300">Become a Client</a>
+    </div>
+</section>
+
+  
+
+
+
+    <!-- About Us Section -->
+    <section id="about" class="container mx-auto px-4 py-16 text-center">
+        <h2 class="text-3xl font-bold mb-6">About Our Company</h2>
+        <p class="max-w-3xl mx-auto text-lg text-gray-700">We are a passionate team dedicated to delivering high-quality web design and software solutions. Our mission is to empower businesses and individuals with innovative digital tools. We also believe in nurturing the next generation of tech talent through our student project mentorship programs. {Link: According to UnderConstructionPage https://underconstructionpage.com/student-guide-showcasing-your-academic-projects-with-an-online-portfolio/}, displaying student projects can help in obtaining better job opportunities.</p> </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+            <p class="text-lg mb-8">Have a project in mind or need assistance? Let's talk!</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">Email Us</h4>
+                    <a href="mailto:info@yourcompany.com" class="text-blue-400 hover:underline">info@aventuratechnologies.com</a>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">Call Us</h4>
+                    <a href="tel:+1234567890" class="text-blue-400 hover:underline">+1 (480) 567-890</a>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">Connect on LinkedIn</h4>
+                    <a href="#" class="text-blue-400 hover:underline">Aventura Technologies</a>
+                </div>
+            </div>
+            <!-- Simple Contact Form (Optional, requires backend for submission) -->
+            <form class="max-w-lg mx-auto mt-12 p-6 bg-gray-700 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <input type="text" placeholder="Your Name" class="w-full p-3 rounded-md bg-gray-600 border border-gray-500 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <input type="email" placeholder="Your Email" class="w-full p-3 rounded-md bg-gray-600 border border-gray-500 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <textarea placeholder="Your Message" rows="5" class="w-full p-3 rounded-md bg-gray-600 border border-gray-500 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700 transition duration-300">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+   <!-- Footer Section with Navigation -->
+<!-- Extended Footer Section -->
+<footer id="colophon" class="site-footer bg-gray-900 text-gray-300 py-12" role="contentinfo">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Core Services -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">OUR SERVICES</h3>
+                <ul class="space-y-2">
+                    <li><a href="#web-design" class="hover:text-blue-400">Website Design</a></li>
+                    <li><a href="#hosting" class="hover:text-blue-400">Hosting Solutions</a></li>
+                    <li><a href="#mobile-apps" class="hover:text-blue-400">Mobile App Development</a></li>
+                    <li><a href="#software" class="hover:text-blue-400">Software Solutions</a></li>
+                    <li><a href="#marketing" class="hover:text-blue-400">Digital Marketing</a></li>
+                    <li><a href="#ai-courses" class="hover:text-blue-400">AI Courses</a></li>
+                </ul>
+            </div>
+
+            <!-- About Us -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">ABOUT US</h3>
+                <p class="text-sm leading-relaxed">Aventura Technologies is a creative powerhouse delivering web design, software services, and digital training. We empower businesses and guide students to shine through technical innovation.</p>
+            </div>
+
+            <!-- More Services -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">MORE SERVICES</h3>
+                <ul class="space-y-2">
+                    <li><a href="#branding" class="hover:text-blue-400">Branding Solutions</a></li>
+                    <li><a href="#content-writing" class="hover:text-blue-400">Content Writing</a></li>
+                    <li><a href="#business-registration" class="hover:text-blue-400">Company Incorporation</a></li>
+                    <li><a href="#gst-filing" class="hover:text-blue-400">Online GST Return Filing</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Policy Info -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">Legal & Policy</h3>
+                <ul class="space-y-2">
+                    <li><a href="#terms" class="hover:text-blue-400">Terms and Conditions</a></li>
+                    <li><a href="#privacy" class="hover:text-blue-400">Privacy Policy</a></li>
+                    <li><a href="#refunds" class="hover:text-blue-400">Refund & Cancellation</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer Navigation & Socials -->
+<footer id="footer-nav" class="bg-gray-800 text-gray-400 py-6">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mb-4 md:mb-0">
+            <a href="https://www.facebook.com/aventuratechnologies" target="_blank" title="Facebook" class="hover:text-white">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/aventuratech" target="_blank" title="Twitter" class="hover:text-white">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/aventuratechnologies" target="_blank" title="Instagram" class="hover:text-white">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@aventuratechnologies" target="_blank" title="YouTube" class="hover:text-white">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-sm">
+            &copy; 2025 <a href="#" class="hover:text-white">Aventura Technologies Pvt Ltd</a>. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

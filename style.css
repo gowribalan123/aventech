@@ -1,0 +1,9 @@
+ 
+    .carousel-slide {
+      transition: transform 02.5s ease-in-out;
+    }
+  .carousel-slide {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
