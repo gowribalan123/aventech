@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Web Design | Custom Website Development Services</title>
+    <meta name="description" content="Professional web design services with responsive development, UX optimization, and SEO integration. 5+ years experience crafting conversion-focused websites.">
+    
+    <!-- Preload Resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- Style Sheets -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #2563eb, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .service-card:hover .service-icon {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="font-['Inter'] bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg" x-data="{ isOpen: false }">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold gradient-text">Aventura Web</a>
+                <!-- Mobile Menu Button -->
+                <button @click="isOpen = !isOpen" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services" class="hover:text-blue-600">Services</a>
+                    <a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
+                    <a href="#process" class="hover:text-blue-600">Process</a>
+                    <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Get Quote</a>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden" x-show="isOpen" x-transition>
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#services" class="block px-3 py-2 rounded-md hover:bg-gray-100">Services</a>
+                    <a href="#portfolio" class="block px-3 py-2 rounded-md hover:bg-gray-100">Portfolio</a>
+                    <a href="#process" class="block px-3 py-2 rounded-md hover:bg-gray-100">Process</a>
+                    <a href="#contact" class="block px-3 py-2 bg-blue-600 text-white rounded-md">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Transform Your Digital Presence</h1>
+            <p class="text-xl mb-8">Custom web solutions that drive engagement and conversions</p>
+            <div class="space-x-4">
+                <a href="#contact" class="bg-white text-blue-800 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90">Start Your Project</a>
+                <a href="#portfolio" class="border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-blue-800">View Work</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Core Services -->
+    <section id="services" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Web Design Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <div class="service-icon w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6 transition-transform">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Responsive Web Design</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Mobile-first approach</li>
+                        <li>• Cross-browser compatibility</li>
+                        <li>• Performance optimization</li>
+                    </ul>
+                </div>
+                
+                <!-- Repeat for other services -->
+                <!-- Service Card 2: E-Commerce -->
+                <!-- Service Card 3: CMS Integration -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Recent Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="project1.jpg" alt="E-commerce website design" 
+                         class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <div class="text-center text-white p-4">
+                            <h3 class="text-xl font-bold mb-2">Online Store</h3>
+                            <p class="text-sm">300% increase in conversions</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more portfolio items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-center mb-8">Start Your Project</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Project Type</label>
+                        <select class="w-full p-3 border rounded-lg">
+                            <option>Website Redesign</option>
+                            <option>New Website</option>
+                            <option>E-Commerce</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Budget Range</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button type="button" class="border p-3 rounded-lg hover:border-blue-600">$1k - $5k</button>
+                            <button type="button" class="border p-3 rounded-lg hover:border-blue-600">$5k - $10k</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Upload Requirements</label>
+                        <div class="border-dashed border-2 border-gray-300 rounded-lg p-8 text-center">
+                            <input type="file" class="hidden" id="fileInput">
+                            <label for="fileInput" class="cursor-pointer">
+                                <svg class="w-12 h-12 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                                </svg>
+                                <p class="mt-2">Drag files or click to upload</p>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Custom Web Development</a></li>
+                        <li><a href="#" class="hover:text-white">E-Commerce Solutions</a></li>
+                        <li><a href="#" class="hover:text-white">Website Maintenance</a></li>
+                    </ul>
+                </div>
+                <!-- Add other footer sections -->
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p>&copy; 2025 Aventura Web Design. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

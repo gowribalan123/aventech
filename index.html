@@ -17,23 +17,34 @@
         }
     </style>
 </head>
-<body class="font-sans antialiased bg-gray-50 text-gray-800">
+<body class="font-sansantialiased bg-gray-50  text-gray-800">
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-md py-4">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            
-   <a href="#" class="text-2xl font-bold text-gray-800"><img src="./images/aventura.jpg" alt="Logo" class=" h-21 w-auto" /></a>
-
-
-           
-<!-- Header Navigation including Search -->
+   
+ <!-- Header Section -->
+    <header class="bg-white shadow-md py-4 ">
+        <div class="container mx-auto px-4 ">
+          <!-- Hero Section -->
 <!-- Navigation Bar -->
  
-<nav class="hidden  md:flex items-center space-x-6">
-     <a href="#" class="  bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Home</a>
-    <!-- Services Dropdown -->
-    <div class="group relative">
+      <nav class="md:flex items-center space-x-6" x-data="{ isOpen: false }">
+         <div class="container mx-auto px-6 py-2">
+            <div class="flex justify-between items-center">
+         
+              <a href="#" class="text-2xl font-bold text-gray-800"><img src="./images/aventura.jpg" alt="Logo" class=" h-21 w-auto" /></a>
+ 
+                 <!-- Mobile Menu Button -->
+                <button @click="isOpen = !isOpen" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#" class="  bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Home</a>
+         <!-- Services Dropdown -->
+       <div class="group relative">
         <button class="text-gray-600 hover:text-blue-600 focus:outline-none">Services</button>
         <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-48">
             <a href="#web-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Website Design</a>
@@ -43,10 +54,10 @@
             <a href="#marketing" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Digital Marketing</a>
             <a href="#ai-courses" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">AI Courses</a>
         </div>
-    </div>
+       </div>
 
-    <!-- Portfolio Dropdown -->
-    <div class="group relative">
+        <!-- Portfolio Dropdown -->
+       <div class="group relative">
         <button class="text-gray-600 hover:text-blue-600 focus:outline-none">Portfolio</button>
         <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-56">
             <a href="#website-portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Website Portfolio</a>
@@ -54,33 +65,32 @@
             <a href="#company-profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Company Profile Portfolio</a>
             <a href="#business-card" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Business Card Portfolio</a>
         </div>
-    </div>
+       </div>
 
-    <!-- Other Links -->
-    <a href="#clients" class="text-gray-600 hover:text-blue-600">Clients</a>
-    <a href="#about" class="text-gray-600 hover:text-blue-600">About Us</a>
-    <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
-
-    <!-- Custom Search Form -->
-   <!-- <form action="/search" method="GET" class="relative ml-4">
-        <input type="text" name="q" placeholder="Search..." 
-               class="pl-4 pr-10 py-1.5 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-white text-gray-800 w-48">
-        <button type="submit" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-600 hover:text-blue-800">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" 
-                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                 <path stroke-linecap="round" stroke-linejoin="round" 
-                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-        </button>
-    </form>
-    -->
-</nav>
-            <button class="md:hidden text-gray-600 hover:text-gray-900">☰</button>
+       <!-- Other Links -->
+       <a href="#clients" class="text-gray-600 hover:text-blue-600">Clients</a>
+       <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
+       <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+             </div> 
         </div>
-    </header>
-
-    <!-- Hero Section -->
+          
+  <!-- Mobile Menu -->
+            <div class="md:hidden" x-show="isOpen" x-transition>
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#services" class="block px-3 py-2 rounded-md hover:bg-gray-100">Services</a>
+                    <a href="#portfolio" class="block px-3 py-2 rounded-md hover:bg-gray-100">Portfolio</a>
+                    <a href="#clients" class="block px-3 py-2 rounded-md hover:bg-gray-100">Clients</a>
+                    <a href="#about" class="block px-3 py-2 rounded-md hover:bg-gray-100">About</a>
+                    <a href="#contact" class="block px-3 py-2 bg-blue-600 text-white rounded-md">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav> 
+    
    
+    </div>
+</header>
+
 
 <!-- Hero Section with Carousel -->
 <section class="bg-gradient-to-r from-blue-700 to-black text-white py-20 relative overflow-hidden"
@@ -134,6 +144,9 @@
         </template>
     </div>
 </section>
+
+      
+   
 
 
     <!-- Services Overview Section -->
