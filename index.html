@@ -11,13 +11,19 @@
 
    
     <style>
-         
+        *{
+          
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        } 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+           
+         }
     </style>
 </head>
-<body class="font-sansantialiased bg-gray-50  text-gray-800">
+<body class="font-sansantialiased bg-gray-50  text-gray-800  ">
 
    
  <!-- Header Section -->
@@ -28,7 +34,9 @@
  
       <nav class="md:flex items-center space-x-6" x-data="{ isOpen: false }">
          <div class="container mx-auto px-6 py-2">
-            <div class="flex justify-between items-center">
+<!--Desktop menu-->
+
+ <div class="flex justify-between items-center">
          
               <a href="#" class="text-2xl font-bold text-gray-800"><img src="./images/aventro.jpg" alt="Logo" class=" h-21 w-auto" /></a>
  
@@ -40,40 +48,42 @@
                 </button>
 
 
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex space-x-8">
-        <a href="#" class="  bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Home</a>
-         <!-- Services Dropdown -->
-       <div class="group relative">
-        <button class="text-gray-600 hover:text-blue-600 focus:outline-none">Services</button>
-        <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-48">
-            <a href="#web-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Website Design</a>
-            <a href="#hosting" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Hosting Solutions</a>
-            <a href="#mobile-apps" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mobile App Development</a>
-            <a href="#software" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Software Solutions</a>
-            <a href="#marketing" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Digital Marketing</a>
-            <a href="#ai-courses" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">AI Courses</a>
-        </div>
-       </div>
-
-        <!-- Portfolio Dropdown -->
-       <div class="group relative">
-        <button class="text-gray-600 hover:text-blue-600 focus:outline-none">Portfolio</button>
-        <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-56">
-            <a href="#website-portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Website Portfolio</a>
-            <a href="#logo-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logo Design Portfolio</a>
-            <a href="#company-profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Company Profile Portfolio</a>
-            <a href="#business-card" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Business Card Portfolio</a>
-        </div>
-       </div>
-
-       <!-- Other Links -->
-       <a href="#clients" class="text-gray-600 hover:text-blue-600">Clients</a>
-       <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
-       <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
-             </div> 
-        </div>
           
+
+ <!-- Desktop Menu -->
+<div class="hidden md:flex space-x-8">
+  <a href="#" class="bg-blue-600 text-white px-4 py-1 rounded-lg hover:bg-blue-700 uppercase text-lg font-bold">Home</a>
+
+  <div class="group relative">
+    <button class="text-gray-600 hover:text-blue-600 focus:outline-none uppercase text-lg font-bold">Services</button>
+    <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-48">
+      <a href="#web-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Website Design</a>
+      <a href="#hosting" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Hosting Solutions</a>
+      <a href="#mobile-apps" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Mobile App Development</a>
+      <a href="#software" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Software Solutions</a>
+      <a href="#marketing" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Digital Marketing</a>
+      <a href="#ai-courses" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">AI Courses</a>
+    </div>
+  </div>
+
+  <!-- Portfolio Dropdown -->
+<div class="group relative">
+  <button class="text-gray-600 hover:text-blue-600 focus:outline-none uppercase text-lg font-bold">
+    Portfolio
+  </button>
+  <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-56">
+    <a href="#website-portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Website Portfolio</a>
+    <a href="#logo-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Logo Design Portfolio</a>
+    <a href="#company-profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Company Profile Portfolio</a>
+    <a href="#business-card" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Business Card Portfolio</a>
+  </div>
+</div>
+
+<a href="#clients" class="text-gray-600 hover:text-blue-600 uppercase text-lg font-bold">Clients</a>
+<a href="#about" class="text-gray-600 hover:text-blue-600 uppercase text-lg font-bold">About</a>
+<a href="#contact" class="text-gray-600 hover:text-blue-600 uppercase text-lg font-bold">Contact</a>
+</div>
+</div>
   <!-- Mobile Menu -->
             <div class="md:hidden" x-show="isOpen" x-transition>
                 <div class="px-2 pt-2 pb-3 space-y-1">
@@ -144,6 +154,7 @@
         </template>
     </div>
 </section>
+
 
       
    
@@ -319,9 +330,7 @@
      </div>
     
 </section>
-
-
-  
+ 
 
 
 
