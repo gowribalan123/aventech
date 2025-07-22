@@ -106,7 +106,7 @@
 
 
 <!-- Hero Section with Carousel -->
-<section class="bg-gradient-to-r from-blue-700 to-black text-white px-4 py-20 relative justify-center overflow-hidden"
+<section class="bg-gradient-to-r from-blue-700 to-black text-white px-4 py-20 relative  overflow-hidden"
          x-data="{
              activeSlide: 0,
              slides: [
@@ -121,7 +121,7 @@
          @mouseenter.window="clearInterval(interval)"
          @mouseleave.window="interval = setInterval(() => { direction = 'right'; activeSlide = (activeSlide + 1) % slides.length }, 4000)">
     
-    <div class="container mx-auto px-4  text-center relative h-40 md:h-46">
+    <div class="container mx-auto px-4  text-center relative h-40 md:h-46 rounded-xl">
         <!-- Slides Container -->
         <div class="relative h-full w-full overflow-hidden ">
             <template x-for="(slide, index) in slides" :key="index">
@@ -165,7 +165,7 @@
 
     <!-- Services Overview Section -->
     <section id="services" class="container mx-auto px-4 py-10 bg-blue-50 ">
-     <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16">
+     <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16 rounded-xl">
       <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
   Our Core Services
   <span class="block w-20 h-1 bg-white mx-auto mt-4 rounded-full"></span>
@@ -220,44 +220,67 @@
 
     <!-- Featured Projects/Portfolio Section -->
     <section id="portfolio" class="container mx-auto px-4 py-10 bg-blue-50">
-        <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16">
+        <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16 rounded-xl">
              <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
   Our Portfolio Highlights
   <span class="block w-20 h-1 bg-white mx-auto mt-4 rounded-full"></span>
 </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card Example 1 (Web Design) -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="./images/lachlanweb.jpg" alt="Web Design Project Image" class="w-full h-48 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-1">E-commerce Website Redesign</h3>
-                        <p class="text-gray-600 text-sm mb-3">#WebDesign #Ecommerce #Responsive</p>
-                        <a href="https://lachlanlab.com/"  target="_blank" rel="noopener noreferrer"  class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">View Case Study</a>
-                    </div>
-                </div>
-                <!-- Project Card Example 2 (Software Service) -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="./images/exloweb.jpg" alt="Software Project Image" class="w-full h-48 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Custom CRM Development</h3>
-                        <p class="text-gray-600 text-sm mb-3">#SoftwareDevelopment #CRM #Efficiency</p>
-                        <a href="https://exlmal.com/"  target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">View Details</a>
-                    </div>
-                </div>
-                <!-- Project Card Example 3 (Student Project) -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="./images//alphametweb.jpg" alt="Student Project Image" class="w-full h-48 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-1">AI-Powered Chatbot (Student)</h3>
-                        <p class="text-gray-600 text-sm mb-3">#StudentProject #AI #Chatbot</p>
-                        <a href="https://alphametls.org/" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">Explore Project</a>
-                    </div>
-                </div>
+                <!-- Project Card -->
+  <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transform transition duration-300 hover:shadow-xl">
+    <img src="./images/lachlanweb.jpg" alt="Web Design Project Image" class="w-full h-48 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-bold text-gray-800 mb-2 tracking-wide hover:text-blue-600 transition duration-300">
+        E-commerce Website Redesign
+      </h3>
+      <p class="text-sm text-gray-500 mb-4">#WebDesign #Ecommerce #Responsive</p>
+      <a href="https://lachlanlab.com/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white px-5 py-2 rounded-full text-sm font-medium shadow-md hover:opacity-90 transition duration-300">
+         View Case Study
+      </a>
+    </div>
+  </div>
+
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+  <img src="./images/exloweb.jpg" alt="Software Project Image" class="w-full h-48 object-cover">
+  <div class="p-6">
+    <h3 class="text-2xl font-bold text-gray-800 mb-2 tracking-wide hover:text-blue-600 transition duration-300">
+      Custom CRM Development
+    </h3>
+    <p class="text-sm text-gray-500 mb-4 italic">#SoftwareDevelopment #CRM #Efficiency</p>
+    <a href="https://exlmal.com/" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white px-5 py-2 rounded-full text-sm font-medium shadow-md hover:scale-105 transition duration-300">
+       View Details
+    </a>
+  </div>
+</div>
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+  <img src="./images/alphametweb.jpg" alt="Student Project Image" class="w-full h-48 object-cover">
+  <div class="p-6">
+    <h3 class="text-2xl font-bold text-gray-800 mb-2 tracking-wide hover:text-blue-600 transition duration-300">
+      AI-Powered Chatbot (Student)
+    </h3>
+    <p class="text-sm text-gray-500 mb-4 italic">#StudentProject #AI #Chatbot</p>
+    <a href="https://alphametls.org/" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white px-5 py-2 rounded-full text-sm font-medium shadow-md hover:scale-105 transition duration-300">
+       Explore Project
+    </a>
+  </div>
+</div>
                 <!-- Add more project cards as needed -->
             </div>
-            <div class="text-center mt-12">
-                <a href="#" class="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-700 transition duration-300">View All Projects</a>
-            </div>
+           <div class="text-center mt-12">
+  <a href="#"
+     class="inline-block bg-gradient-to-r from-indigo-600 to-purple-700 text-white px-10 py-3 rounded-full text-lg font-semibold shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out">
+     View All Projects
+  </a>
+</div>
         </div>
     </section>
 
@@ -266,7 +289,7 @@
 
 <!-- Clients Section -->
 <section id="clients" class="container mx-auto px-4 py-10 bg-blue-50">
-     <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-20">
+     <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-20 rounded-xl">
            <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
   Our Clients
   <span class="block w-20 h-1 bg-white mx-auto mt-4 rounded-full"></span>
@@ -367,13 +390,13 @@
 
 
     <!-- About Us Section -->
-    <section id="about" class="container mx-auto px-4 py-10 bg-blue-50 text-center ">
-          <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16">
+    <section id="about" class="container mx-auto px-4 py-10 bg-blue-50 text-center  ">
+          <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-10 py-16 rounded-full">
            <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
 About Our Company
   <span class="block w-20 h-1 bg-white mx-auto mt-4 rounded-full"></span>
 </h2>
-        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+        <div class="bg-white rounded-lg shadow-md p-10 text-center rounded-full">
         <p class="max-w-6xl mx-auto text-lg text-gray-700 text-white">At Aventro, we’re a dynamic team of designers, developers, and digital strategists who specialize in building powerful, engaging websites and software solutions that fuse creativity with functionality. Based in Kerala, India, we focus on user-centric design, responsive experiences, and innovative technologies to help businesses shine online. From website and app development to digital marketing and AI-powered training, our services are crafted to elevate brands and drive impact. We believe in meaningful partnerships, pixel-perfect execution, and solving real-world problems with thoughtful design and smart code.
         </p>
         </div>
