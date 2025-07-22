@@ -105,7 +105,7 @@
 
 
 <!-- Hero Section with Carousel -->
-<section class="bg-gradient-to-r from-blue-700 to-black text-white py-20 relative overflow-hidden"
+<section class="bg-gradient-to-r from-blue-700 to-black text-white py-20  relative overflow-hidden"
          x-data="{
              activeSlide: 0,
              slides: [
@@ -120,7 +120,7 @@
          @mouseenter.window="clearInterval(interval)"
          @mouseleave.window="interval = setInterval(() => { direction = 'right'; activeSlide = (activeSlide + 1) % slides.length }, 4000)">
     
-    <div class="container mx-auto px-4 text-center relative h-40 md:h-46">
+    <div class="container mx-auto px-4 py-10 text-center relative h-50 md:h-56">
         <!-- Slides Container -->
         <div class="relative h-full w-full overflow-hidden">
             <template x-for="(slide, index) in slides" :key="index">
@@ -136,25 +136,28 @@
             </template>
         </div>
 
-        <!-- Static Content -->
-        <p class="text-lg md:text-xl mb-8">Innovative web design, robust software solutions, and empowering student projects.</p>
-        <a href="#portfolio" 
-           class="bg-white text-blue-700 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300"
-           aria-label="View our portfolio projects">
-            View Our Work
-        </a>
-    </div>
 
-    <!-- Navigation Controls -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
-        <template x-for="(slide, index) in slides" :key="index">
-            <button @click="direction = activeSlide > index ? 'left' : 'right'; activeSlide = index"
-                    class="w-3 h-3 rounded-full transition-colors"
-                    :class="activeSlide === index ? 'bg-white' : 'bg-white/50'"
-                    :aria-label="'Go to slide ' + (index + 1)">
-            </button>
-        </template>
-    </div>
+
+<!-- Static Content -->
+<p class="text-lg md:text-xl mb-8">Innovative web design, robust software solutions, and empowering student projects.</p>
+
+<a href="#portfolio" 
+   class="bg-white text-blue-700 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300"
+   aria-label="View our portfolio projects">
+   View Our Work
+</a>
+
+<!-- 👇 Navigation Controls (moved below CTA) -->
+<div class="mt-8 flex justify-center space-x-2 py-2">
+  <template x-for="(slide, index) in slides" :key="index">
+    <button 
+      @click="direction = activeSlide > index ? 'left' : 'right'; activeSlide = index"
+      class="w-3 h-3 rounded-full transition-colors"
+      :class="activeSlide === index ? 'bg-white' : 'bg-white/50'"
+      :aria-label="'Go to slide ' + (index + 1)">
+    </button>
+  </template>
+</div>
 </section>
 
 
@@ -163,25 +166,28 @@
 
 
     <!-- Services Overview Section -->
-    <section id="services" class="container mx-auto px-4 py-16 bg-blue-50 ">
+    <section id="services" class="container mx-auto px-4 py-10 bg-blue-50 ">
      <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16">
-        <h2 class="text-3xl font-bold text-center mb-12 text-white">Our Core Services</h2>
+      <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
+  Our Core Services
+  <span class="block w-20 h-1 bg-white mx-auto mt-4 rounded-full"></span>
+</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">  
             <!-- Service 1: Web Design -->
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <div class="text-blue-600 text-5xl mb-4">🌐</div>
+                <div class="text-5xl mb-4 animate-bounce">🌐</div>
                 <h3 class="text-xl font-semibold mb-2">Web Design</h3>
                 <p class="text-gray-600">Creating stunning, responsive, and user-friendly websites tailored to your brand.</p>
             </div>
             <!-- Service 2: Software Services -->
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <div class="text-green-600 text-5xl mb-4">💻</div>
+                <div class="text-green-600 text-5xl mb-4 animate-bounce">💻</div>
                 <h3 class="text-xl font-semibold mb-2">Software Services</h3>
                 <p class="text-gray-600">Developing custom software solutions to streamline your business operations.</p>
             </div>
             <!-- Service 3: Student Projects -->
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <div class="text-yellow-600 text-5xl mb-4">🎓</div>
+                <div class="text-yellow-600 text-5xl mb-4 animate-bounce">🎓</div>
                 <h3 class="text-xl font-semibold mb-2">Student Projects</h3>
                 <p class="text-gray-600">Guiding and assisting students in bringing their innovative project ideas to life.</p>
             </div>
@@ -191,21 +197,21 @@
 
     <!-- Service 4: Branding Solutions -->
     <div class="bg-white rounded-lg shadow-md p-6 text-center">
-      <div class="text-pink-500 text-5xl mb-4">🎨</div>
+      <div class="text-pink-500 text-5xl mb-4 animate-bounce">🎨</div>
       <h3 class="text-xl font-semibold mb-2">Branding Solutions</h3>
       <p class="text-gray-600">Crafting memorable brand identities, logos, and visual systems that speak volumes.</p>
     </div>
 
     <!-- Service 5: Content Writing -->
     <div class="bg-white rounded-lg shadow-md p-6 text-center">
-      <div class="text-purple-500 text-5xl mb-4">📝</div>
+      <div class="text-purple-500 text-5xl mb-4 animate-bounce">📝</div>
       <h3 class="text-xl font-semibold mb-2">Content Writing</h3>
       <p class="text-gray-600">Professional content for websites, blogs, and marketing—tailored to your voice and audience.</p>
     </div>
 
     <!-- Service 6: Company Incorporation -->
-    <div class="bg-white rounded-lg shadow-md p-6 text-center">
-      <div class="text-red-500 text-5xl mb-4">📄</div>
+    <div class="bg-white rounded-lg shadow-md p-6 text-center ">
+      <div class="text-red-500 text-5xl mb-4 animate-bounce">📄</div>
       <h3 class="text-xl font-semibold mb-2">Company Incorporation</h3>
       <p class="text-gray-600">Helping startups register, structure, and launch smoothly with complete compliance support.</p>
     </div>
@@ -215,35 +221,38 @@
      
 
     <!-- Featured Projects/Portfolio Section -->
-    <section id="portfolio" class="container mx-auto px-4 py-16 bg-blue-50">
+    <section id="portfolio" class="container mx-auto px-4 py-10 bg-blue-50">
         <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16">
-            <h2 class="text-3xl font-bold text-center mb-12 text-white">Our Portfolio Highlights</h2>
+             <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
+  Our Portfolio Highlights
+  <span class="block w-20 h-1 bg-white mx-auto mt-4 rounded-full"></span>
+</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card Example 1 (Web Design) -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://reallygooddesigns.com/wp-content/uploads/2022/05/portfolio-website-design-examples.png" alt="Web Design Project Image" class="w-full h-48 object-cover">
+                    <img src="./images/lachlanweb.jpg" alt="Web Design Project Image" class="w-full h-48 object-cover">
                     <div class="p-5">
                         <h3 class="text-xl font-semibold text-gray-800 mb-1">E-commerce Website Redesign</h3>
                         <p class="text-gray-600 text-sm mb-3">#WebDesign #Ecommerce #Responsive</p>
-                        <a href="#" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">View Case Study</a>
+                        <a href="https://lachlanlab.com/"  target="_blank" rel="noopener noreferrer"  class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">View Case Study</a>
                     </div>
                 </div>
                 <!-- Project Card Example 2 (Software Service) -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2023/07/19-best-web-design-portfolio-examples-to-inspire-yours-currentyear--3.jpeg" alt="Software Project Image" class="w-full h-48 object-cover">
+                    <img src="./images/exloweb.jpg" alt="Software Project Image" class="w-full h-48 object-cover">
                     <div class="p-5">
                         <h3 class="text-xl font-semibold text-gray-800 mb-1">Custom CRM Development</h3>
                         <p class="text-gray-600 text-sm mb-3">#SoftwareDevelopment #CRM #Efficiency</p>
-                        <a href="#" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">View Details</a>
+                        <a href="https://exlmal.com/"  target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">View Details</a>
                     </div>
                 </div>
                 <!-- Project Card Example 3 (Student Project) -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://designs.raleighswebsitedesign.com/wp-content/uploads/2023/02/25122315/Blog-Social_Image.jpg" alt="Student Project Image" class="w-full h-48 object-cover">
+                    <img src="./images//alphametweb.jpg" alt="Student Project Image" class="w-full h-48 object-cover">
                     <div class="p-5">
                         <h3 class="text-xl font-semibold text-gray-800 mb-1">AI-Powered Chatbot (Student)</h3>
                         <p class="text-gray-600 text-sm mb-3">#StudentProject #AI #Chatbot</p>
-                        <a href="#" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">Explore Project</a>
+                        <a href="https://alphametls.org/" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">Explore Project</a>
                     </div>
                 </div>
                 <!-- Add more project cards as needed -->
@@ -258,14 +267,15 @@
   
 
 <!-- Clients Section -->
-<section id="clients" class="container mx-auto px-4 py-16 bg-blue-50">
-     <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16">
-        <h2 class="text-4xl font-bold text-center mb-16 text-white">
-           Our Clients
-        </h2>
+<section id="clients" class="container mx-auto px-4 py-10 bg-blue-50">
+     <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-20">
+           <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
+  Our Clients
+  <span class="block w-20 h-1 bg-white mx-auto mt-4 rounded-full"></span>
+</h2>
         
     
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center bg-gradient-to-r from-blue-700 to-black px-4 py-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center bg-gradient-to-r from-blue-700 to-black px-4 py-15 ">
         <!-- Client Logo 1 -->
         <a href="https://qaislab.com" target="_blank" rel="noopener noreferrer" 
            class="group flex justify-center items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300"
@@ -359,9 +369,12 @@
 
 
     <!-- About Us Section -->
-    <section id="about" class="container mx-auto px-4 py-16 bg-blue-50 text-center ">
+    <section id="about" class="container mx-auto px-4 py-10 bg-blue-50 text-center ">
           <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16">
-        <h2 class="text-3xl font-bold mb-6 text-white">About Our Company</h2>
+           <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
+About Our Company
+  <span class="block w-20 h-1 bg-white mx-auto mt-4 rounded-full"></span>
+</h2>
         <div class="bg-white rounded-lg shadow-md p-6 text-center">
         <p class="max-w-6xl mx-auto text-lg text-gray-700 text-white">At Aventro, we’re a dynamic team of designers, developers, and digital strategists who specialize in building powerful, engaging websites and software solutions that fuse creativity with functionality. Based in Kerala, India, we focus on user-centric design, responsive experiences, and innovative technologies to help businesses shine online. From website and app development to digital marketing and AI-powered training, our services are crafted to elevate brands and drive impact. We believe in meaningful partnerships, pixel-perfect execution, and solving real-world problems with thoughtful design and smart code.
         </p>
