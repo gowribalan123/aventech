@@ -123,7 +123,7 @@
          @mouseenter.window="clearInterval(interval)"
          @mouseleave.window="interval = setInterval(() => { direction = 'right'; activeSlide = (activeSlide + 1) % slides.length }, 4000)">
     
-    <div class="container mx-auto px-4  text-center relative h-40 md:h-46 rounded-xl">
+    <div class="container mx-auto px-4 py-12  text-center relative h-40 md:h-46 rounded-xl">
         <!-- Slides Container -->
         <div class="relative h-full w-full overflow-hidden ">
             <template x-for="(slide, index) in slides" :key="index">
@@ -142,7 +142,7 @@
         <!-- Static Content -->
         <p class="text-lg md:text-xl mb-8">Innovative web design, robust software solutions, and empowering student projects.</p>
         <a href="#portfolio" 
-           class="bg-white text-blue-700 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300"
+           class="bg-white text-blue-700 px-8  py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300"
            aria-label="View our portfolio projects">
             View Our Work
         </a>
@@ -167,7 +167,7 @@
 
 
     <!-- Services Overview Section -->
-    <section id="services" class="   px-4 py-10 bg-blue-50 ">
+    <section id="services" class="   px-4 py-10  bg-gradient-to-r from-black via-blue-700 to-white">
      <div class=" container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16 rounded-xl">
       <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
   Our Core Services
@@ -222,7 +222,7 @@
      
 
     <!-- Featured Projects/Portfolio Section -->
-    <section id="portfolio" class=" mx-auto px-4 py-10 bg-blue-50">
+    <section id="portfolio" class=" mx-auto px-4 py-10   bg-gradient-to-r from-black to-blue-700">
         <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-16 rounded-xl">
              <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
   Our Portfolio Highlights
@@ -291,7 +291,7 @@
   
 
 <!-- Clients Section -->
-<section id="clients" class=" mx-auto px-4 py-10 bg-blue-50">
+<section id="clients" class=" mx-auto px-4 py-10 bg-gradient-to-r from-black via-blue-700 to-white">
      <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-4 py-20 rounded-xl">
            <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
   Our Clients
@@ -393,7 +393,7 @@
 
 
     <!-- About Us Section -->
-    <section id="about" class=" mx-auto px-4 py-10 bg-blue-50 text-center  ">
+    <section id="about" class=" mx-auto px-4 py-10 bg-gradient-to-r from-black to-blue-700 text-center  ">
           <div class="container mx-auto bg-gradient-to-r from-blue-700 to-black px-10 py-16 rounded-full">
            <h2 class="text-4xl font-extrabold text-center mb-12 relative  text-white">
 About Our Company
