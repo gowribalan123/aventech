@@ -25,11 +25,11 @@
 
     </style>
 </head>
-<body class="font-sansantialiased  text-gray-800  bg-blue-50">
+<body class="font-sansantialiased  text-gray-800  bg-blue-50 ">
 
     
  <!-- Header Section -->
-<header class="bg-gradient-to-r from-blue-100  to-blue-500 shadow-md py-4 ">
+<header class="bg-gradient-to-r from-blue-100  to-gray-200 shadow-md py-4 ">
         <div class="container mx-auto px-4 ">
           <!-- Hero Section -->
 <!-- Navigation Bar -->
@@ -108,7 +108,7 @@
 
 
 <!-- Hero Section with Carousel -->
-<section class="  bg-gradient-to-r from-blue-700 to-black text-white px-1 py-20 relative  overflow-hidden"
+<section class="  bg-gradient-to-r from-blue-700 to-black text-white px-1 py-20 relative overflow-hidden"
          x-data="{
              activeSlide: 0,
              slides: [
@@ -125,7 +125,7 @@
     
     <div class="container mx-auto px-2 py-8 text-center relative h-40 md:h-46 rounded-xl">
         <!-- Slides Container -->
-        <div class="relative h-full w-full overflow-hidden ">
+        <div class="relative h-full w-full overflow-hidden rounded-xl ">
             <template x-for="(slide, index) in slides" :key="index">
                 <h1 class="absolute inset-0 text-4xl md:text-5xl font-extrabold mb-4 transform transition-all duration-700 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]"
                     x-show="activeSlide === index"
