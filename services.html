@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventro Technoloies - Web Design & Software Services</title>
+    <!-- Link to Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+   
+    <style>
+        *{
+          
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+             
+        } 
+       body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+
+    </style>
+</head>
+<body class="font-sansantialiased  text-gray-800 bg-gradient-to-b from-indigo-900 via-blue-800 to-purple-800">
+
+    
+ <!-- Header Section -->
+<header class="bg-gradient-to-r from-blue-100  to-gray-200 shadow-md py-4 ">
+        <div class="container mx-auto px-4 ">
+          <!-- Hero Section -->
+<!-- Navigation Bar -->
+ 
+      <nav class="md:flex items-center space-x-6 " x-data="{ isOpen: false }">
+         <div class="container mx-auto px-6 py-2">
+<!--Desktop menu-->
+
+ <div class="flex justify-between items-center ">
+         
+              <a href="#" class="text-2xl font-bold text-gray-800">
+              <img  src="./images/aventro1-bg.png" srcset="./images/aventro1-bg.png 2x, ./images/aventro1-bg.png 3x" sizes="(max-width: 768px) 200px, 300px"  alt="Logo" class="h-20 w-auto object-contain"/>
+               </a>
+ 
+                 <!-- Mobile Menu Button -->
+                <button @click="isOpen = !isOpen" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+
+          
+
+ <!-- Desktop Menu -->
+<div class="hidden md:flex space-x-8   ">
+  <a href="./index.html" class="bg-gradient-to-r from-blue-700 to-black text-white px-4 py-1 rounded-lg hover:bg-blue-700 uppercase text-lg font-bold">Home</a>
+
+  <div class="group relative ">
+    <button class="text-gray-600 hover:text-blue-600 focus:outline-none uppercase text-lg font-bold">Services</button>
+    <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-48">
+      <a href="#web-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Website Design</a>
+      <a href="#hosting" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Hosting Solutions</a>
+      <a href="#mobile-apps" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Mobile App Development</a>
+      <a href="#software" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Software Solutions</a>
+      <a href="#marketing" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Digital Marketing</a>
+      <a href="#ai-courses" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">AI Courses</a>
+    </div>
+  </div>
+
+  <!-- Portfolio Dropdown -->
+<div class="group relative">
+  <button class="text-gray-600 hover:text-blue-600 focus:outline-none uppercase text-lg font-bold">
+    Portfolio
+  </button>
+  <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-56">
+    <a href="#website-portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Website Portfolio</a>
+    <a href="#logo-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Logo Design Portfolio</a>
+    <a href="#company-profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Company Profile Portfolio</a>
+    <a href="#business-card" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Business Card Portfolio</a>
+  </div>
+</div>
+
+<a href="./index.html#clients" class="text-gray-600 hover:text-blue-600 uppercase text-lg font-bold">Clients</a>
+<a href="./index.html#about" class="text-gray-600 hover:text-blue-600 uppercase text-lg font-bold">About</a>
+<a href="./index.html#contact" class="text-gray-600 hover:text-blue-600 uppercase text-lg font-bold">Contact</a>
+</div>
+</div>
+  <!-- Mobile Menu -->
+            <div class="md:hidden" x-show="isOpen" x-transition>
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                      <a href="index.html"   class="block px-3 py-2 rounded-md hover:bg-gray-100">Home</a>
+                    <a href="services.html" class="block px-3 py-2 rounded-md hover:bg-gray-100">Services</a>
+                    <a href="index.html#portfolio" class="block px-3 py-2 rounded-md hover:bg-gray-100">Portfolio</a>
+                    <a href="index.html#clients" class="block px-3 py-2 rounded-md hover:bg-gray-100">Clients</a>
+                    <a href="index.html#about" class="block px-3 py-2 rounded-md hover:bg-gray-100">About</a>
+                    <a href="index.html#contact" class="block px-3 py-2 bg-blue-600 text-white rounded-md">Contact</a>
+                  
+                </div>
+            </div>
+        </div>
+    </nav> 
+    
+   
+    </div>
+</header>
+
+
+<main class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8 bg-gradient-to-b from-indigo-900 via-blue-800 to-purple-800 ">
+ <!-- Sidebar Navigation -->
+<aside class="lg:w-1/4 bg-gradient-to-b from-indigo-900 via-yellow-800 to-purple-800 p-6 rounded-xl shadow-lg text-white">
+  <h2 class="text-3xl font-extrabold mb-6 text-center text-white tracking-wide">Our Services</h2>
+  <ul class="space-y-4">
+    <li>
+      <a href="#web-design"
+         class="block bg-indigo-700 hover:bg-yellow-500 hover:text-indigo-900 transition px-4 py-2 rounded-md font-medium shadow-sm">
+         🌐 Web Design
+      </a>
+    </li>
+    <li>
+      <a href="#software-services"
+         class="block bg-indigo-700 hover:bg-yellow-500 hover:text-indigo-900 transition px-4 py-2 rounded-md font-medium shadow-sm">
+         💻 Software Services
+      </a>
+    </li>
+    <li>
+      <a href="#student-projects"
+         class="block bg-indigo-700 hover:bg-yellow-500 hover:text-indigo-900 transition px-4 py-2 rounded-md font-medium shadow-sm">
+         🎓 Student Projects
+      </a>
+    </li>
+    <li>
+      <a href="#branding"
+         class="block bg-indigo-700 hover:bg-yellow-500 hover:text-indigo-900 transition px-4 py-2 rounded-md font-medium shadow-sm">
+         🎨 Branding
+      </a>
+    </li>
+    <li>
+      <a href="#content-writing"
+         class="block bg-indigo-700 hover:bg-yellow-500 hover:text-indigo-900 transition px-4 py-2 rounded-md font-medium shadow-sm">
+         📝 Content Writing
+      </a>
+    </li>
+    <li>
+      <a href="#incorporation"
+         class="block bg-indigo-700 hover:bg-yellow-500 hover:text-indigo-900 transition px-4 py-2 rounded-md font-medium shadow-sm">
+         📄 Company Incorporation
+      </a>
+    </li>
+  </ul>
+</aside>
+
+  <!-- section of services -->
+ <div class="lg:w-3/4">
+  <!-- Section: Web Design -->
+  <section id="web-design" class="py-16 px-6 bg-gradient-to-r from-red-100 to-blue-500">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center bg-white bg-opacity-90 rounded-xl shadow-lg p-8">
+    
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-4xl font-extrabold text-indigo-800 mb-4">🌐 Web Design</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        We specialize in crafting visually stunning, mobile-responsive websites tailored to your brand identity.
+        From minimalist portfolios to dynamic e-commerce experiences, our designs blend modern aesthetics with intuitive user experiences to leave a lasting impression.
+      </p>
+      <ul class="mt-6 space-y-2 text-gray-600">
+        <li>✅ Responsive layout across all devices</li>
+        <li>✅ Interactive UI elements & animations</li>
+        <li>✅ SEO-optimized and performance-tuned</li>
+      </ul>
+    </div>
+
+    <!-- Image -->
+    <div class="text-center">
+      <img src="/images/webdesign service.jpg" alt="Web Design Mockup" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+    </div>
+
+  </div>
+</section>
+
+  <!-- Section: Software Services -->
+
+ <section id="software-services" class="py-16 px-6 bg-gradient-to-r from-blue-500 to-yellow-100">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center bg-white bg-opacity-90 p-8 rounded-2xl shadow-lg">
+
+    <!-- Image Preview -->
+    <div class="text-center">
+      <img src="./images/software service.jpg" alt="Software Services Showcase"
+           class="rounded-xl shadow-md hover:scale-105 transition duration-300" />
+    </div>
+
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-4xl font-extrabold text-indigo-800 mb-6">💻 Software Services</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        We engineer intelligent, scalable solutions to streamline operations, enhance productivity, and empower digital transformation.
+      </p>
+      <ul class="space-y-3 text-gray-600">
+        <li>⚙️ Custom Business Dashboards & ERP Tools</li>
+        <li>📲 API Development & Backend Logic</li>
+        <li>🧠 AI & Automation Services</li>
+        <li>🔒 Secure Cloud Integration & Hosting</li>
+        <li>📈 Performance Monitoring & Analytics</li>
+      </ul>
+      <div class="mt-6">
+        <a href="./services.html#software-services"
+           class="inline-block bg-gradient-to-r from-indigo-600 to-purple-700 text-white px-6 py-2 rounded-full font-medium shadow-md hover:scale-105 hover:shadow-lg transition">
+          Learn More
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Section: Branding Solutions -->
+ <section id="branding" class="py-16 px-6 bg-gradient-to-r from-purple-100 to-pink-500">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center bg-white bg-opacity-90 p-8 rounded-xl shadow-md">
+
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-4xl font-extrabold text-purple-700 mb-6">🎨 Branding Solutions</h2>
+      <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+        We craft memorable identities that resonate with your audience—from logo design to full-scale brand strategy.
+        Whether you're launching a startup or reinventing an existing brand, our process blends creativity, clarity, and consistency.
+      </p>
+      <ul class="space-y-3 text-gray-600">
+        <li>🖌️ Custom Logos & Style Guides</li>
+        <li>📸 Brand Imagery & Visual Systems</li>
+        <li>🎯 Brand Voice & Messaging Frameworks</li>
+        <li>💼 Identity Revamps & Rebranding</li>
+      </ul>
+      <div class="mt-6">
+        <a href="./services.html#branding"
+           class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full font-medium shadow-md hover:scale-105 transition">
+          View Brand Stories
+        </a>
+      </div>
+    </div>
+
+    <!-- Image Section -->
+    <div class="text-center">
+      <img src="./images/branding-solutions.webp" alt="Branding Showcase"
+           class="rounded-lg shadow-lg hover:scale-105 transition duration-300" />
+    </div>
+
+  </div>
+</section>
+
+  <!-- Section: Content Writing -->
+<section id="content-writing" class="py-16 px-6 bg-gradient-to-r from-yellow-500 to-orange-200">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center bg-white bg-opacity-90 p-8 rounded-xl shadow-md">
+
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-4xl font-extrabold text-yellow-700 mb-6">📝 Content Writing</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Our words spark clarity and conversion. Whether it’s a landing page, a product story, or a blog that builds trust—we write content that sounds human, stays optimized, and aligns with your brand voice.
+      </p>
+      <ul class="space-y-3 text-gray-600">
+        <li>📣 Website Copy that Converts</li>
+        <li>📄 SEO Blogs for Visibility & Engagement</li>
+        <li>🎯 Ad & Campaign Texts with Impact</li>
+        <li>🗣️ Voice-Tuned Writing for Target Audiences</li>
+      </ul>
+      <div class="mt-6">
+        <a href="./services.html#content-writing"
+           class="inline-block bg-gradient-to-r from-yellow-600 to-orange-600 text-white px-6 py-2 rounded-full font-medium shadow-md hover:scale-105 transition">
+          See Writing Samples
+        </a>
+      </div>
+    </div>
+
+    <!-- Image Section -->
+    <div class="text-center">
+      <img src="./images/content writing.jpg" alt="Content Writing Illustration"
+           class="rounded-lg shadow-lg hover:scale-105 transition duration-300" />
+    </div>
+
+  </div>
+</section>
+
+  <!-- Section: Company Incorporation -->
+ <section id="incorporation" class="py-16 px-6 bg-gradient-to-r from-green-100 to-gray-500">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center bg-white bg-opacity-90 p-8 rounded-xl shadow-md">
+
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-4xl font-extrabold text-gray-800 mb-6">📄 Company Incorporation</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        We guide entrepreneurs through seamless company formation—from idea to official launch. Whether you're registering a private limited entity or securing legal compliance, our end-to-end incorporation services bring clarity, speed, and confidence to your startup journey.
+      </p>
+      <ul class="space-y-3 text-gray-600">
+        <li>🧾 Legal documentation & business structure advisory</li>
+        <li>🔐 Compliance setup (GST, PAN, ROC filings)</li>
+        <li>🏛️ Registration of LLP, Pvt Ltd, OPC & MSMEs</li>
+        <li>📊 Business bank account & taxation guidance</li>
+      </ul>
+      <div class="mt-6">
+        <a href="./services.html#incorporation"
+           class="inline-block bg-gradient-to-r from-gray-700 to-gray-900 text-white px-6 py-2 rounded-full font-medium shadow hover:scale-105 transition">
+          Get Started
+        </a>
+      </div>
+    </div>
+
+    <!-- Image Illustration -->
+    <div class="text-center">
+      <img src="./images/Company-Incorporation.jpg" alt="Company Incorporation Support"
+           class="rounded-lg shadow-lg hover:scale-105 transition duration-300" />
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Section : Student Projects  -->
+
+<section id="student-projects" class="py-16 px-6 bg-gradient-to-r from-red-500 to-indigo-100">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center bg-white bg-opacity-90 p-8 rounded-xl shadow-lg">
+
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-4xl font-extrabold text-indigo-800 mb-6">🎓 Student Projects</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        We empower students to transform academic concepts into real-world tech solutions. Through personalized mentoring, hands-on development, and structured feedback, we help young innovators bring their visions to life.
+      </p>
+      <ul class="space-y-3 text-gray-600">
+        <li>🚀 Full-Stack Guidance (HTML, CSS, JS, React, Node)</li>
+        <li>🧪 Idea Validation & Project Planning</li>
+        <li>🎯 UI/UX Optimization & Responsive Design</li>
+        <li>🧠 Career Exposure & Portfolio Building</li>
+      </ul>
+      <div class="mt-6">
+        <a href="./services.html#student-projects"
+           class="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium shadow-md hover:scale-105 transition">
+          Explore Student Portfolio
+        </a>
+      </div>
+    </div>
+
+    <!-- Image Area -->
+    <div class="text-center">
+      <img src="./images/Website-Ideas-for-Students.jpg" alt="Student Project Showcase"
+           class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+</main>
+
+
+
+     <!-- Footer Section -->
+   <!-- Footer Section with Navigation -->
+<!-- Extended Footer Section -->
+<footer id="colophon" class="site-footer bg-gray-900 text-gray-300 py-12" role="contentinfo">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Core Services -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">OUR SERVICES</h3>
+                <ul class="space-y-2">
+                    <li><a href="#web-design" class="hover:text-blue-400">Website Design</a></li>
+                    <li><a href="#hosting" class="hover:text-blue-400">Hosting Solutions</a></li>
+                    <li><a href="#mobile-apps" class="hover:text-blue-400">Mobile App Development</a></li>
+                    <li><a href="#software" class="hover:text-blue-400">Software Solutions</a></li>
+                    <li><a href="#marketing" class="hover:text-blue-400">Digital Marketing</a></li>
+                    <li><a href="#ai-courses" class="hover:text-blue-400">AI Courses</a></li>
+                </ul>
+            </div>
+
+            <!-- About Us -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">ABOUT US</h3>
+                <p class="text-sm leading-relaxed">Aventro Technologies is a creative powerhouse delivering web design, software services, and digital training. We empower businesses and guide students to shine through technical innovation.</p>
+            </div>
+
+            <!-- More Services -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">MORE SERVICES</h3>
+                <ul class="space-y-2">
+                    <li><a href="#branding" class="hover:text-blue-400">Branding Solutions</a></li>
+                    <li><a href="#content-writing" class="hover:text-blue-400">Content Writing</a></li>
+                    <li><a href="#business-registration" class="hover:text-blue-400">Company Incorporation</a></li>
+                    <li><a href="#gst-filing" class="hover:text-blue-400">Online GST Return Filing</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Policy Info -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">Legal & Policy</h3>
+                <ul class="space-y-2">
+                    <li><a href="#terms" class="hover:text-blue-400">Terms and Conditions</a></li>
+                    <li><a href="#privacy" class="hover:text-blue-400">Privacy Policy</a></li>
+                    <li><a href="#refunds" class="hover:text-blue-400">Refund & Cancellation</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer Navigation & Socials -->
+<footer id="footer-nav" class="bg-gray-800 text-gray-400 py-6">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mb-4 md:mb-0">
+            <a href="https://www.facebook.com/aventrotechnologies" target="_blank" title="Facebook" class="hover:text-white">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/aventrotech" target="_blank" title="Twitter" class="hover:text-white">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/aventrotechnologies" target="_blank" title="Instagram" class="hover:text-white">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@aventrotechnologies" target="_blank" title="YouTube" class="hover:text-white">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+
+    <!-- Footer Copyright -->
+<div class="text-m text-center border-t border-gray-700 pt-4 mt-4 text-white">
+  &copy; 2025 <a href="#" class="hover:text-white">Aventro Technologies Pvt Ltd</a>. All rights reserved.
+</div>
+</footer>
+ 
+</body>
+</html>
