@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventro Technoloies - Web Design & Software Services</title>
+    <!-- Link to Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+   
+    <style>
+        *{
+          
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+             
+        } 
+       body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+
+    </style>
+</head>
+<body class="font-sansantialiased  text-gray-800 bg-gradient-to-b from-indigo-900 via-blue-800 to-purple-800">
+
+    
+ <!-- Header Section -->
+<header class="bg-gradient-to-r from-blue-100  to-gray-200 shadow-md py-4 ">
+        <div class="container mx-auto px-4 ">
+          <!-- Hero Section -->
+<!-- Navigation Bar -->
+ 
+      <nav class="md:flex items-center space-x-6 " x-data="{ isOpen: false }">
+         <div class="container mx-auto px-6 py-2">
+<!--Desktop menu-->
+
+ <div class="flex justify-between items-center ">
+         
+              <a href="#" class="text-2xl font-bold text-gray-800">
+              <img  src="./images/aventro1-bg.png" srcset="./images/aventro1-bg.png 2x, ./images/aventro1-bg.png 3x" sizes="(max-width: 768px) 200px, 300px"  alt="Logo" class="h-20 w-auto object-contain"/>
+               </a>
+ 
+                 <!-- Mobile Menu Button -->
+                <button @click="isOpen = !isOpen" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+
+          
+
+ <!-- Desktop Menu -->
+<div class="hidden md:flex space-x-8   ">
+  <a href="./index.html" class="bg-gradient-to-r from-blue-700 to-black text-white px-4 py-1 rounded-lg hover:bg-blue-700 uppercase text-lg font-bold">Home</a>
+
+  <div class="group relative ">
+    <button class="text-gray-600 hover:text-blue-600 focus:outline-none uppercase text-lg font-bold">Services</button>
+    <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-48">
+      <a href="#web-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Website Design</a>
+      <a href="#hosting-solutions" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Hosting Solutions</a>
+      <a href="#mobile-app-development" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Mobile App Development</a>
+      <a href="#software" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Software Solutions</a>
+      <a href="#marketing" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Digital Marketing</a>
+      <a href="#ai-courses" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">AI Courses</a>
+    </div>
+  </div>
+
+  <!-- Portfolio Dropdown -->
+<div class="group relative">
+  <button class="text-gray-600 hover:text-blue-600 focus:outline-none uppercase text-lg font-bold">
+    Portfolio
+  </button>
+  <div class="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-56">
+    <a href="#website-portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Website Portfolio</a>
+    <a href="#logo-portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Logo Design Portfolio</a>
+    <a href="#company-portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Company Profile Portfolio</a>
+    <a href="#business-portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase text-sm font-medium">Business Card Portfolio</a>
+  </div>
+</div>
+
+<a href="./index.html#clients" class="text-gray-600 hover:text-blue-600 uppercase text-lg font-bold">Clients</a>
+<a href="./index.html#about" class="text-gray-600 hover:text-blue-600 uppercase text-lg font-bold">About</a>
+<a href="./index.html#contact" class="text-gray-600 hover:text-blue-600 uppercase text-lg font-bold">Contact</a>
+</div>
+</div>
+  <!-- Mobile Menu -->
+            <div class="md:hidden" x-show="isOpen" x-transition>
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                      <a href="index.html"   class="block px-3 py-2 rounded-md hover:bg-gray-100">Home</a>
+                    <a href="services.html" class="block px-3 py-2 rounded-md hover:bg-gray-100">Services</a>
+                    <a href="index.html#portfolio" class="block px-3 py-2 rounded-md hover:bg-gray-100">Portfolio</a>
+                    <a href="index.html#clients" class="block px-3 py-2 rounded-md hover:bg-gray-100">Clients</a>
+                    <a href="index.html#about" class="block px-3 py-2 rounded-md hover:bg-gray-100">About</a>
+                    <a href="index.html#contact" class="block px-3 py-2 bg-blue-600 text-white rounded-md">Contact</a>
+                  
+                </div>
+            </div>
+        </div>
+    </nav> 
+    
+   
+    </div>
+</header>
+
+
+<main class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8 bg-gradient-to-b from-indigo-900 via-blue-800 to-purple-800 ">
+ <!-- Sidebar Navigation -->
+<aside class="lg:w-1/4 bg-gradient-to-b from-indigo-900 via-yellow-800 to-purple-800 p-6 rounded-xl shadow-lg text-white">
+     <h2 class="text-3xl font-extrabold mb-6 text-center text-white tracking-wide">Our Portfolio</h2>
+  <ul class="space-y-4">
+  <li>
+    <a href="#website-portfolio"
+       class="block bg-indigo-700 hover:bg-yellow-500 hover:text-indigo-900 transition px-4 py-2 rounded-md font-medium shadow-sm">
+       💻 Website Portfolio
+    </a>
+  </li>
+  <li>
+    <a href="#logo-portfolio"
+       class="block bg-indigo-700 hover:bg-yellow-500 hover:text-indigo-900 transition px-4 py-2 rounded-md font-medium shadow-sm">
+       🎨 Logo Design
+    </a>
+  </li>
+  <li>
+    <a href="#company-portfolio"
+       class="block bg-indigo-700 hover:bg-yellow-500 hover:text-indigo-900 transition px-4 py-2 rounded-md font-medium shadow-sm">
+       🏢 Company Profile
+    </a>
+  </li>
+  <li>
+    <a href="#business-portfolio"
+       class="block bg-indigo-700 hover:bg-yellow-500 hover:text-indigo-900 transition px-4 py-2 rounded-md font-medium shadow-sm">
+       💼 Business Card
+    </a>
+  </li>
+</ul>
+  </aside>
+
+  <!-- section of services -->
+ <div class="lg:w-3/4">
+
+    
+<!-- Logo Design Portfolio Grid -->
+<section id="logo-portfolio" class="py-16 px-6 bg-gradient-to-r from-red-100 to-blue-500">
+  <div class="max-w-6xl mx-auto bg-white bg-opacity-90 rounded-xl shadow-lg p-8">
+    
+    <!-- Heading -->
+    <h2 class="text-4xl font-extrabold text-indigo-800 mb-6 text-center">🎨 Logo Design Portfolio</h2>
+    <p class="text-lg text-gray-700 leading-relaxed mb-8 text-center">
+      A curated selection of our logo creations—each crafted to reflect brand identity, versatility, and visual impact.
+    </p>
+
+    <!-- Image Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <img src="/images/img1.webp" alt="Logo Sample 1" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+  <img src="/images/img2.webp" alt="Logo Sample 2" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+  <img src="/images/img3.webp" alt="Logo Sample 3" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+  <img src="/images/img1.webp" alt="Logo Sample 1" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+  <img src="/images/img2.webp" alt="Logo Sample 2" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+  <img src="/images/img3.webp" alt="Logo Sample 3" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+  </div>
+
+    <!-- CTA Button -->
+    <div class="mt-10 text-center">
+      <a href="./services.html#logo-design"
+         class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-2 rounded-full font-medium shadow-md hover:scale-105 transition">
+        Explore More Logo Projects
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Website Portfolio Section -->
+<section id="website-portfolio" class="py-16 px-6 bg-gradient-to-r from-green-100 to-blue-300">
+  <div class="max-w-6xl mx-auto bg-white bg-opacity-90 rounded-xl shadow-lg p-8">
+
+    <!-- Heading -->
+    <h2 class="text-4xl font-extrabold text-indigo-800 mb-6 text-center">💻 Website Design Portfolio</h2>
+    <p class="text-lg text-gray-700 leading-relaxed mb-8 text-center">
+      Explore our collection of responsive, user-friendly websites crafted with precision and creativity.
+    </p>
+
+    <!-- Image Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <img src="/images/webimg1.png" alt="Website Sample 1" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+      <img src="/images/webimg2.png" alt="Website Sample 2" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+      <img src="/images/webimg3.png" alt="Website Sample 3" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+       <img src="/images/webimg1.png" alt="Website Sample 1" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+      <img src="/images/webimg2.png" alt="Website Sample 2" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+      <img src="/images/webimg3.png" alt="Website Sample 3" class="rounded-lg shadow-md hover:scale-105 transition duration-300" />
+    </div>
+
+    <!-- CTA Button -->
+    <div class="mt-10 text-center">
+      <a href="./services.html#web-design"
+         class="inline-block bg-gradient-to-r from-teal-600 to-cyan-500 text-white px-6 py-2 rounded-full font-medium shadow-md hover:scale-105 transition">
+        View More Projects
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Company Portfolio Section -->
+<section id="company-portfolio" class="py-16 px-6 bg-gradient-to-r from-yellow-100 to-indigo-200">
+  <div class="max-w-6xl mx-auto bg-white bg-opacity-90 rounded-xl shadow-lg p-8">
+
+    <!-- Heading -->
+    <h2 class="text-4xl font-extrabold text-indigo-800 mb-6 text-center">🏢 Company Portfolio</h2>
+    <p class="text-lg text-gray-700 leading-relaxed mb-8 text-center">
+      A showcase of our diverse projects, trusted clients, and the impact we've made across industries.
+    </p>
+
+    <!-- Portfolio Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-lg shadow-md p-4 hover:scale-105 transition duration-300">
+        <img src="/images/companyimg.png" alt="Project 1" class="rounded-md mb-4" />
+        <h3 class="text-xl font-semibold text-indigo-700">E-Commerce Redesign</h3>
+        <p class="text-gray-600 text-sm mt-2">Revamped UI/UX for a leading online retailer, boosting conversions by 35%.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-4 hover:scale-105 transition duration-300">
+        <img src="/images/Company portfolio br.png" alt="Project 2" class="rounded-md mb-4" />
+        <h3 class="text-xl font-semibold text-indigo-700">Corporate Branding</h3>
+        <p class="text-gray-600 text-sm mt-2">Developed a cohesive brand identity for a fintech startup.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-4 hover:scale-105 transition duration-300">
+        <img src="/images/companyimg2.png" alt="Project 3" class="rounded-md mb-4" />
+        <h3 class="text-xl font-semibold text-indigo-700">Responsive Web App</h3>
+        <p class="text-gray-600 text-sm mt-2">Built a scalable dashboard for a logistics company using React and Tailwind CSS.</p>
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
+
+    <!-- CTA Button -->
+    <div class="mt-10 text-center">
+      <a href="./portfolio.html"
+         class="inline-block bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-6 py-2 rounded-full font-medium shadow-md hover:scale-105 transition">
+        View Full Portfolio
+      </a>
+    </div>
+  </div>
+</section>
+
+ 
+
+</div>
+
+</main>
+
+</div>
+
+  <!-- section of services -->
+ <div class="lg:w-3/4">
+
+    
+ 
+
+</div>
+
+</main>
+
+
+
+     <!-- Footer Section -->
+   <!-- Footer Section with Navigation -->
+<!-- Extended Footer Section -->
+<footer id="colophon" class="site-footer bg-gray-900 text-gray-300 py-12" role="contentinfo">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Core Services -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">OUR SERVICES</h3>
+                <ul class="space-y-2">
+                    <li><a href="#web-design" class="hover:text-blue-400">Website Design</a></li>
+                    <li><a href="#hosting" class="hover:text-blue-400">Hosting Solutions</a></li>
+                    <li><a href="#mobile-apps" class="hover:text-blue-400">Mobile App Development</a></li>
+                    <li><a href="#software" class="hover:text-blue-400">Software Solutions</a></li>
+                    <li><a href="#marketing" class="hover:text-blue-400">Digital Marketing</a></li>
+                    <li><a href="#ai-courses" class="hover:text-blue-400">AI Courses</a></li>
+                </ul>
+            </div>
+
+            <!-- About Us -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">ABOUT US</h3>
+                <p class="text-sm leading-relaxed">Aventro Technologies is a creative powerhouse delivering web design, software services, and digital training. We empower businesses and guide students to shine through technical innovation.</p>
+            </div>
+
+            <!-- More Services -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">MORE SERVICES</h3>
+                <ul class="space-y-2">
+                    <li><a href="#branding" class="hover:text-blue-400">Branding Solutions</a></li>
+                    <li><a href="#content-writing" class="hover:text-blue-400">Content Writing</a></li>
+                    <li><a href="#business-registration" class="hover:text-blue-400">Company Incorporation</a></li>
+                    <li><a href="#gst-filing" class="hover:text-blue-400">Online GST Return Filing</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Policy Info -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">Legal & Policy</h3>
+                <ul class="space-y-2">
+                    <li><a href="#terms" class="hover:text-blue-400">Terms and Conditions</a></li>
+                    <li><a href="#privacy" class="hover:text-blue-400">Privacy Policy</a></li>
+                    <li><a href="#refunds" class="hover:text-blue-400">Refund & Cancellation</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer Navigation & Socials -->
+<footer id="footer-nav" class="bg-gray-800 text-gray-400 py-6">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mb-4 md:mb-0">
+            <a href="https://www.facebook.com/aventrotechnologies" target="_blank" title="Facebook" class="hover:text-white">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/aventrotech" target="_blank" title="Twitter" class="hover:text-white">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/aventrotechnologies" target="_blank" title="Instagram" class="hover:text-white">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@aventrotechnologies" target="_blank" title="YouTube" class="hover:text-white">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+
+    <!-- Footer Copyright -->
+<div class="text-m text-center border-t border-gray-700 pt-4 mt-4 text-white">
+  &copy; 2025 <a href="#" class="hover:text-white">Aventro Technologies Pvt Ltd</a>. All rights reserved.
+</div>
+</footer>
+ 
+</body>
+</html>
